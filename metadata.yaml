@@ -1,0 +1,103 @@
+version: 2
+name: dwh
+tables:
+- name: TEST_TABLE
+  source: &id001
+    load_type: delta
+    file_pattern: '*.parquet'
+    partition_pattern: (\d+(?:\.\d+)?)_(?:\d+\D+)$
+    params:
+      decimal_separator: .
+      format: parquet
+  columns:
+  - name: column1
+    data_type: string
+  - name: column2
+    data_type: decimal(38,0)
+  - name: column3
+    data_type: date
+    date_format: yyyy-MM-dd HH:mm:ss
+  - name: column4
+    data_type: date
+    is_nullable: true
+  - name: column5
+    data_type: string
+  - name: column6
+    data_type: string
+  - name: column7
+    data_type: string
+    is_nullable: true
+  - name: column8
+    data_type: string
+    is_nullable: true
+  - name: column9
+    data_type: string
+    is_nullable: true
+  - name: column10
+    data_type: string
+    is_nullable: true
+  - name: column11
+    data_type: string
+  - name: column12
+    data_type: string
+    is_nullable: true
+  - name: column13
+    data_type: string
+  - name: column14
+    data_type: string
+    is_nullable: true
+  - name: column15
+    data_type: string
+  primary_key:
+  - unid
+  cdc_column: dml_flag
+  cdc_type: soft
+- name: TEST_TABLE1
+  source: *id001
+  columns:
+  - name: column16
+    data_type: string
+  - name: column1
+    data_type: string
+  - name: column2
+    data_type: decimal(38,0)
+  - name: column3
+    data_type: date
+    date_format: yyyy-MM-dd HH:mm:ss
+  - name: column4
+    data_type: date
+    is_nullable: true
+  - name: column5
+    data_type: string
+  - name: column6
+    data_type: string
+  - name: column7
+    data_type: string
+    is_nullable: true
+  - name: column8
+    data_type: string
+    is_nullable: true
+  - name: column9
+    data_type: string
+    is_nullable: true
+  - name: column10
+    data_type: string
+    is_nullable: true
+  - name: column11
+    data_type: string
+  - name: column12
+    data_type: string
+    is_nullable: true
+  - name: column13
+    data_type: string
+  - name: column14
+    data_type: string
+    is_nullable: true
+  - name: column15
+    data_type: string
+  - name: column16
+    data_type: string
+  primary_key:
+  - unid
+  cdc_column: dml_flag
+  cdc_type: soft

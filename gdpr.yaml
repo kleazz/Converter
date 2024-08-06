@@ -1,0 +1,10 @@
+- name: TEST_TABLE
+  personal_data:
+    hash:
+    - column1
+    - column15
+- name: TEST_TABLE1
+  personal_data:
+    hash:
+    - column1
+    - column15
